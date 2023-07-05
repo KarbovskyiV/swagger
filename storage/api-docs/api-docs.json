@@ -64,19 +64,33 @@
                                 "allOf": [
                                     {
                                         "properties": {
-                                            "title": {
-                                                "type": "string",
-                                                "example": "some title"
-                                            },
-                                            "likes": {
-                                                "type": "integer",
-                                                "example": 20
+                                            "": {
+                                                "type": "array",
+                                                "items": {
+                                                    "properties": {
+                                                        "title": {
+                                                            "type": "string"
+                                                        },
+                                                        "likes": {
+                                                            "type": "integer"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
                                             }
                                         },
                                         "type": "object"
                                     }
                                 ]
-                            }
+                            },
+                            "example": [
+                                [
+                                    {
+                                        "title": "Some title",
+                                        "likes": 20
+                                    }
+                                ]
+                            ]
                         }
                     }
                 },
@@ -89,23 +103,36 @@
                                     "properties": {
                                         "data": {
                                             "properties": {
-                                                "id": {
-                                                    "type": "integer",
-                                                    "example": 1
+                                                "first_item": {
+                                                    "properties": {
+                                                        "2020": {
+                                                            "type": "array",
+                                                            "items": {}
+                                                        },
+                                                        "2021": {
+                                                            "type": "array",
+                                                            "items": {}
+                                                        }
+                                                    },
+                                                    "type": "object"
                                                 },
-                                                "title": {
-                                                    "type": "string",
-                                                    "example": "some title"
-                                                },
-                                                "likes": {
-                                                    "type": "integer",
-                                                    "example": 20
+                                                "second_item": {
+                                                    "type": "object"
                                                 }
                                             },
                                             "type": "object"
                                         }
                                     },
                                     "type": "object"
+                                },
+                                "example": {
+                                    "data": {
+                                        "first_item": {
+                                            "2020": [],
+                                            "2021": []
+                                        },
+                                        "second_item": []
+                                    }
                                 }
                             }
                         }

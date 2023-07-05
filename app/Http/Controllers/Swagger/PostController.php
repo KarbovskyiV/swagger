@@ -15,10 +15,18 @@ use App\Http\Controllers\Controller;
  *         @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                      @OA\Property(property="title", type="string", example="some title"),
- *                      @OA\Property(property="likes", type="integer", example=20),
+ *                      @OA\Property(property="", type="array", @OA\Items(
+ *                          @OA\Property(property="title", type="string"),
+ *                          @OA\Property(property="likes", type="integer"),
+ *                      )),
  *                  )
- *              }
+ *              },
+ *              example={{
+ *                  {
+ *                      "title": "Some title",
+ *                      "likes": 20
+ *                  }
+ *              }}
  *          )
  *     ),
  *
@@ -27,10 +35,26 @@ use App\Http\Controllers\Controller;
  *          description="Ok",
  *          @OA\JsonContent(
  *              @OA\Property(property="data", type="object",
- *                  @OA\Property(property="id", type="integer", example=1),
- *                  @OA\Property(property="title", type="string", example="some title"),
- *                  @OA\Property(property="likes", type="integer", example=20),
+ *                  @OA\Property(property="first_item", type="object",
+ *                      @OA\Property(property=2020, type="array", @OA\Items(
+ *
+ *                      )),
+ *                      @OA\Property(property=2021, type="array", @OA\Items(
+ *
+ *                      )),
+ *                  ),
+ *                  @OA\Property(property="second_item", type="object"),
  *              ),
+ *
+ *              example={
+ *                  "data": {
+ *                      "first_item": {
+ *                          2020: {},
+ *                          2021: {},
+ *                      },
+ *                      "second_item": {},
+ *                  }
+ *              }
  *          ),
  *     ),
  * ),
