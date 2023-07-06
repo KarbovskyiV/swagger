@@ -15,9 +15,11 @@ use App\Http\Controllers\Controller;
  *         @OA\JsonContent(
  *              allOf={
  *                  @OA\Schema(
- *                      @OA\Property(property="title", type="string", example="some title"),
- *                      @OA\Property(property="likes", type="integer", example=20),
+ *                      @OA\Property(property="id", type="integer", enum={1, 2, 3}),
  *                  )
+ *              },
+ *              example={
+ *                  "ids": {1, 2, 3}
  *              }
  *          )
  *     ),

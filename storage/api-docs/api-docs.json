@@ -64,17 +64,30 @@
                                 "allOf": [
                                     {
                                         "properties": {
-                                            "title": {
-                                                "type": "string",
-                                                "example": "some title"
-                                            },
-                                            "likes": {
-                                                "type": "integer",
-                                                "example": 20
+                                            "": {
+                                                "type": "array",
+                                                "items": {
+                                                    "properties": {
+                                                        "title": {
+                                                            "type": "string"
+                                                        },
+                                                        "likes": {
+                                                            "type": "integer"
+                                                        }
+                                                    },
+                                                    "type": "object"
+                                                }
                                             }
                                         },
                                         "type": "object"
                                     }
+                                ]
+                            },
+                            "example": {
+                                "ids": [
+                                    1,
+                                    2,
+                                    3
                                 ]
                             }
                         }
